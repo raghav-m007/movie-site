@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-CSS-JS</title>
+
+    <!-- Tailwind CSS CDN -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Open+Sans:wght@800&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            background-color: #FAFAFA;
+        }
+
+        .font-roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .font-open-sans {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .text-accent {
+            color: #02A689;
+        }
+
+        .text-blue {
+            color: #514efc;
+        }
+
+        .text-nblack {
+            color: #3a3e41;
+        }
+
+        #main {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 50px;
+            padding-left: 80px;
+
+
+            @media (min-width: 1024px) {
+                width: 5%;
+            }
+        }
+
+        .movie {
+            padding-left: 0.05rem;
+            padding-right: 0.05rem;
+            padding-top: 0.05rem;
+            padding-bottom: 0.05rem;
+            margin-left: 0.75rem;
+            margin-right: 0.75rem;
+            margin-top: 7rem;
+            background-color: #ffffff;
+            text-align: center;
+            flex-direction: row;
+            flex-grow: 1;
+            width: 20rem;
+            height: 24rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+            @media (min-width: 640px) {
+                flex-grow: 0;
+            }
+        }
+
+        .movie img {
+            /* display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            width: 100%; */
+
+            object-fit: cover;
+            /* margin-top: 0.5rem; */
+            width: 100%;
+            height: 90%;
+
+        }
+
+        .movie-info h3 {
+            color: black;
+            font-weight: bold;
+            font-family: font-roboto;
+            font-size: 17px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div
+        class=" w-full sm:h-20 flex flex-col sm:flex-row absolute justify-center sm:justify-between items-center py-4 px-4 md:px-16 shadow-md bg-white">
+        <div class="flex items-center justify-start sm:w-64 sm:border-r-2 border-gray-200">
+            <img src="SWC.svg">
+            <p class="text text-black text-2xl font-extrabold font-open-sans ml-3">Movies</p>
+        </div>
+
+        <div
+            class="flex items-center justify-start w-4/5 sm:w-64 sm:border-l-2 mt-2 sm:mt-0 border-gray-200 p-2 sm:p-0 rounded-full sm:rounded-none sm:bg-white bg-gray-100 h-full">
+            <img src="search.svg">
+            <form id="form">
+                <input id="search" class="ml-3 text-lg focus:outline-none bg-transparent min-w-0" type="text" name=""
+                    id="" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+
+    <div class=" flex flex-row ">
+        <div
+            class="w-80 inline-block sm: h-5/6  flex flex-col py-32 justify-start sm:flex-col items-end bg-gray-100 border-2 font-medium">
+            <div>
+                <div class="w-64 flex justify-start open-sans text-xl mr-0 bg-white">
+                    <div class="px-6 py-2">Search results</div>
+                </div>
+                <div class="w-48 flex justify-start open-sans mr-0 text-xl mt-6">
+                    <div class="px-6 py-2">All Teams</div>
+                </div>
+                <div class="w-48 flex justify-start open-sans text-xl mt-6">
+                    <div class="px-6 py-2">Core</div>
+                </div>
+                <div class="w-48 flex justify-start open-sans text-xl mt-6">
+                    <div class="px-6 py-2">Developers</div>
+                </div>
+                <div class="w-48 flex justify-start open-sans text-xl mt-6 ">
+                    <div class="px-6 py-2">Designers</div>
+                </div>
+                <div class="w-48 flex justify-start open-sans text-xl mt-6">
+                    <div class="px-6 py-2">Mentor</div>
+                </div>
+                <div class="mt-72">
+                    <button class="py-4 px-8 font-semibold rounded-lg shadow-md text-white bg-black hover:bg-green-400">
+                        + Add
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-row justify-center lg:w-4/5  flex-wrap ">
+            <!-- <div
+                class="res card-container text-center bg-white pt-4 pb-5 h-96 sm:flex-grow-0 rounded-lg shadow-lg mx-3 mt-28 flex-row flex-grow border-1 w-80 px-2 ">
+                <img class="res-image mx-auto h-28 w-28 rounded-full object-cover mt-2" src="Avatar.png" />
+                <br>
+                <div class="h-50 flex flex-col items-center justify-center">
+                    <p class="res-title font-roboto text-accent text-xl">Teodoro Luck</p>
+                    <p class="res-sub font-open-sans text-lg mt-2.5">
+                        Product Designer at Google
+                    </p>
+                    <p class="res-sub font-open-sans font-bold text-blue mt-2.5">@Core</p>
+                    <p class="res-sub font-open-sans font-extralight font-nblack mt-2.5 ">
+                        SWC 2018-2021
+                    </p>
+                    <div class="flex flex-wrap">
+                        <a href="#"><img class="mt-4" src="chat_icon.svg" alt="" /></a>
+                        <a href="#"><img class="mt-4 mx-2" src="phone_icon.svg" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="res card-container text-center bg-white pt-4 pb-5 h-96 sm:flex-grow-0 rounded-lg shadow-lg mx-3 mt-28 flex-row border-1 flex-grow w-80 px-2 ">
+                <img class="res-image mx-auto h-28 w-28 rounded-full object-cover mt-2" src="Avatar.png" />
+                <br>
+                <div class="h-50 flex flex-col items-center justify-center">
+                    <p class="res-title font-roboto text-accent text-xl">Teodoro Luck</p>
+                    <p class="res-sub font-open-sans text-lg mt-2.5">
+                        Product Designer at Google
+                    </p>
+                    <p class="res-sub font-open-sans font-bold text-blue mt-2.5 ">@Core</p>
+                    <p class="res-sub font-open-sans font-extralight font-nblack mt-2.5">
+                        SWC 2018-2021
+                    </p>
+                    <div class="flex flex-wrap">
+                        <a href="#"><img class="mt-4" src="chat_icon.svg" alt="" /></a>
+                        <a href="#"><img class="mt-4 mx-2" src="phone_icon.svg" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="res card-container text-center bg-white pt-4 pb-5 h-96 sm:flex-grow-0 rounded-lg shadow-lg mx-3 mt-28 flex-row  border-1 flex-grow  w-80 px-2 ">
+                <img class="res-image mx-auto h-28 w-28 rounded-full object-cover mt-2" src="Avatar.png" />
+                <br>
+                <div class="h-50 flex flex-col items-center justify-center">
+                    <p class="res-title font-roboto text-accent text-xl">Teodoro Luck</p>
+                    <p class="res-sub font-open-sans text-lg mt-2.5">
+                        Product Designer at Google
+                    </p>
+                    <p class="res-sub font-open-sans font-bold text-blue mt-2.5 ">@Core</p>
+                    <p class="res-sub font-open-sans font-extralight font-nblack mt-2.5">
+                        SWC 2018-2021
+                    </p>
+                    <div class="flex flex-wrap">
+                        <a href="#"><img class="mt-4" src="chat_icon.svg" alt="" /></a>
+                        <a href="#"><img class="mt-4 mx-2" src="phone_icon.svg" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="res card-container text-center bg-white pt-4 pb-5 h-96 sm:flex-grow-0 rounded-lg shadow-lg mx-3 mt-0 flex-row flex-grow border-1 w-80 px-2 ">
+                <img class="res-image mx-auto h-28 w-28 rounded-full object-cover mt-2" src="Avatar.png" />
+                <br>
+                <div class="h-50 flex flex-col items-center justify-center">
+                    <p class="res-title font-roboto text-accent text-xl">Teodoro Luck</p>
+                    <p class="res-sub font-open-sans text-lg mt-2.5">
+                        Product Designer at Google
+                    </p>
+                    <p class="res-sub font-open-sans font-bold text-blue mt-2.5 ">@Core</p>
+                    <p class="res-sub font-open-sans font-extralight font-nblack mt-2.5">
+                        SWC 2018-2021
+                    </p>
+                    <div class="flex flex-wrap">
+                        <a href="#"><img class="mt-4" src="chat_icon.svg" alt="" /></a>
+                        <a href="#"><img class="mt-4 mx-2" src="phone_icon.svg" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="res card-container text-center bg-white pt-4 pb-5 h-96 sm:flex-grow-0 rounded-lg shadow-lg mx-3 mt-0 flex-row flex-grow border-1 w-80 px-2 ">
+                <img class="res-image mx-auto h-28 w-28 rounded-full object-cover mt-2" src="Avatar.png" />
+                <br>
+                <div class="h-50 flex flex-col items-center justify-center">
+                    <p class="res-title font-roboto text-accent text-xl">Teodoro Luck</p>
+                    <p class="res-sub font-open-sans text-lg mt-2.5">
+                        Product Designer at Google
+                    </p>
+                    <p class="res-sub font-open-sans font-bold text-blue mt-2.5 ">@Core</p>
+                    <p class="res-sub font-open-sans font-extralight font-nblack mt-2.5">
+                        SWC 2018-2021
+                    </p>
+                    <div class="flex flex-wrap">
+                        <a href="#"><img class="mt-4" src="chat_icon.svg" alt="" /></a>
+                        <a href="#"><img class="mt-4 mx-2" src="phone_icon.svg" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="res card-container text-center bg-white pt-4 pb-5 h-96 sm:flex-grow-0 rounded-lg shadow-lg mx-3 mt-0 flex-row flex-grow border-1 w-80 px-2 ">
+                <img class="res-image mx-auto h-100 w-100  object-cover mt-2" src="Avatar.png" />
+                <div class="h-50 flex flex-col items-center justify-center">
+                    <p class="res-title font-roboto text-accent text-xl">Teodoro Luck</p>
+                    <p class="res-sub font-open-sans text-lg mt-2.5">
+                        Product Designer at Google
+                    </p>
+                    <p class="res-sub font-open-sans font-bold text-blue mt-2.5">@Core</p>
+                    <p class="res-sub font-open-sans font-nblack mt-2.5 font-font-extralight">
+                        SWC 2018-2021
+                    </p>
+                    <div class="flex flex-wrap">
+                        <a href="#"><img class="mt-4" src="chat_icon.svg" alt="" /></a>
+                        <a href="#"><img class="mt-4 mx-2" src="phone_icon.svg" alt="" /></a>
+                    </div>
+                </div>
+            </div> -->
+            <main id="main"></main>
+        </div>
+    </div>
+
+
+
+    <script>
+        const API_KEY = 'api_key=375d864e18e3ad7c39eef9392e902a0a';
+        const BASE_URL = 'https://api.themoviedb.org/3';
+        const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
+        const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+        const searchURL = BASE_URL + '/search/movie?' + API_KEY;
+        const main = document.getElementById('main');
+        const form = document.getElementById('form');
+        const search = document.getElementById('search');
+
+        getMovies(API_URL);
+
+        function getMovies(url) {
+
+            fetch(url).then(res => res.json()).then(data => {
+                console.log(data.results)
+                showMovies(data.results);
+            })
+        }
+
+        function showMovies(data) {
+            main.innerHTML = '';
+
+            data.forEach(movie => {
+                const { title, poster_path } = movie;
+                const movieEl = document.createElement('div');
+                movieEl.classList.add('movie');
+                movieEl.innerHTML = `
+                       
+                <img src="${poster_path ? IMG_URL + poster_path : "http://via.placeholder.com/1080x1580"}" alt="${title}">
+            <div class="movie-info">
+                <h3>${title}</h3>
+                
+            </div>
+         `
+
+                main.appendChild(movieEl);
+
+
+            })
+        }
+
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const searchTerm = search.value;
+
+            if (searchTerm) {
+                getMovies(searchURL + '&query=' + searchTerm)
+            } else {
+                getMovies(API_URL);
+            }
+
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>
